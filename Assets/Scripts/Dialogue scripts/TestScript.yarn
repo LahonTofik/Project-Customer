@@ -1,0 +1,194 @@
+﻿title: NewYarnScript
+Tags:
+---
+Period 1
+Manager, what shall we do?
+    We've got to boost our production capacity to stay ahead. If we don't expand now, we'll lose market share.
+        1: Expand Production Capacity. Impact: + Money, + Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript2>>
+            -> No
+                <<jump NewYarnScript>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript2>>
+            -> No
+                <<jump NewYarnScript>>
+===
+
+title: NewYarnScript2
+Tags:
+---
+Period 2
+Manager, what shall we do? 
+    
+    Maybe it’s smarter to maintain our current output without making substantial changes. At least this way, we won’t hurt the environment, even more.
+        2: Maintain Current Output. It will keep pollution levels stable. Impact: - Money, + Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript3>>
+            -> No
+                <<jump NewYarnScript2>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript3>>
+            -> No
+                <<jump NewYarnScript2>>
+
+===
+
+title: NewYarnScript3
+Tags:
+---
+Period 3
+Manager, what shall we do?
+   
+    It’s time to invest in upgraded water filtration systems. If we don’t act now, the sea and our public image will suffer.
+        3: Upgrade Water Filtration Systems. Impact: - Money, - Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript4>>
+            -> No
+                <<jump NewYarnScript3>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript4>>
+            -> No
+                <<jump NewYarnScript3>>
+    
+===
+
+title: NewYarnScript4
+Tags:
+---
+Period 4
+Manager, what shall we do?
+   
+    Prioritizing efficiency is key. We can address the environmental impact once we've solidified our profits.
+        4: Prioritize Profit Goals. Impact: + Money, + Pollution 
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript51>>
+            -> No
+                <<jump NewYarnScript4>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript51>>
+            -> No
+                <<jump NewYarnScript4>>
+    
+===
+
+title: NewYarnScript51
+Tags:
+---
+Period 5-1
+Manager, what shall we do?
+    We've just landed a massive contract, and the pressure is on to increase production, even if it means more pollution.
+        5: Expand Production into New contract. Impact: + Money, + Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript52>>
+            -> No
+                <<jump NewYarnScript51>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript52>>
+            -> No
+                <<jump NewYarnScript51>>
+
+===
+
+title: NewYarnScript52
+Tags:
+---
+Period 5-2
+    We're committed to maintaining steady production. We believe that preserving the seaside ecosystem is invaluable, and no big contract is worth jeopardizing it.
+        5: Focusing on current markets. Avoids additional pollution. Impact: - Money, + Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript61>>
+            -> No
+                <<jump NewYarnScript52>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript61>>
+            -> No
+                <<jump NewYarnScript52>>
+
+===
+
+title: NewYarnScript61
+Tags:
+---
+Period 61
+Manager, what shall we do?
+    
+    We have a bold plan for environmental restoration that will come at a high cost but will ensure the seaside will thrive.
+        6: Commit Fully to Green Production, though it will be extremely costly. Impact: - Money, - Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript62>>
+            -> No
+                <<jump NewYarnScript61>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript62>>
+            -> No
+                <<jump NewYarnScript61>>
+
+===
+
+title: NewYarnScript62
+Tags:
+---
+    If we abandon our environmental efforts, we can focus purely on profits, but at what expense to the environment?
+        6: Change the Existing Practices. Impact: + Money, + Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript71>>
+            -> No
+                <<jump NewYarnScript62>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript72>>
+            -> No
+                <<jump NewYarnScript62>>
+
+===
+title: NewYarnScript71
+Tags:
+---
+Ending:
+
+Ending 1: Financial Success, Environmental Collapse. High money, high pollution throughout all periods.  
+
+    <<jump NewYarnScript>>
+    
+===
+title: NewYarnScript72
+Tags:
+---
+Ending:
+
+Ending 2: Environmental Recovery. Low money, low pollution throughout all periods. 
+
+    <<jump NewYarnScript>>
+===
