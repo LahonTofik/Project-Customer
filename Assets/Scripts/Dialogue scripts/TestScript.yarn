@@ -1,170 +1,194 @@
 ﻿title: NewYarnScript
-tags:
+Tags:
 ---
 Period 1
-Manager what shall we do?
-    We've got to boost our production capacity to stay ahead. If we don't expand now, we'll lose market share. (This option increases factory productivity but decreases environmental health.) 
-        Choice1: Expand Production Capacity. We need to boost production capacity to stay ahead. It’ll be expensive and increase pollution, but it’s essential for growth. Impact: + Money, + Pollution
-        Are you sure?
+Manager, what shall we do?
+    We've got to boost our production capacity to stay ahead. If we don't expand now, we'll lose market share.
+        1: Expand Production Capacity. Impact: + Money, + Pollution
         -> Yes
-            <<jump NewYarnScript2>>
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript2>>
+            -> No
+                <<jump NewYarnScript>>
         -> No
-            <<jump NewYarnScript>>
-
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript2>>
+            -> No
+                <<jump NewYarnScript>>
 ===
+
 title: NewYarnScript2
-tags:
+Tags:
 ---
 Period 2
-Manager what shall we do? 
+Manager, what shall we do? 
     
-    Maybe it’s smarter to maintain our current output without making substantial changes. At least this way, we won’t hurt the environment. (No, there is no change in productivity, but it doesn’t harm the environment.) 
-        -> Choice2: Maintain Current Output. Maintaining our current output will keep pollution levels stable but won’t help us achieve higher profits. Impact: - Money, + Pollution
-            Are you sure?
+    Maybe it’s smarter to maintain our current output without making substantial changes. At least this way, we won’t hurt the environment, even more.
+        2: Maintain Current Output. It will keep pollution levels stable. Impact: - Money, + Pollution
         -> Yes
-            <<jump NewYarnScript3>>
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript3>>
+            -> No
+                <<jump NewYarnScript2>>
         -> No
-            <<jump NewYarnScript2>>
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript3>>
+            -> No
+                <<jump NewYarnScript2>>
 
 ===
+
 title: NewYarnScript3
-tags:
+Tags:
 ---
 Period 3
-Manager what shall we do?
+Manager, what shall we do?
    
-    It’s time to invest in upgraded water filtration systems. If we don’t act now, the lake and our public image will suffer. (It noticeably reduces pollution but comes at a cost)
-        ->Choice3: Upgrade Water Filtration Systems. Upgrading filtration systems will significantly reduce pollution but will come at a high cost. Impact: - Money, - Pollution
-                Are you sure?
+    It’s time to invest in upgraded water filtration systems. If we don’t act now, the sea and our public image will suffer.
+        3: Upgrade Water Filtration Systems. Impact: - Money, - Pollution
         -> Yes
-            <<jump NewYarnScript4>>
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript4>>
+            -> No
+                <<jump NewYarnScript3>>
         -> No
-            <<jump NewYarnScript3>>
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript4>>
+            -> No
+                <<jump NewYarnScript3>>
     
 ===
+
 title: NewYarnScript4
-tags:
+Tags:
 ---
 Period 4
-Manager what shall we do?
+Manager, what shall we do?
    
-    Prioritizing efficiency is key. We can address the environmental impact once we've solidified our profits. (This approach will save on costs, but may negatively affect environmental health.) 
-        ->Choice4: Prioritize Profit Goals. Prioritizing profit over sustainability might boost short-term earnings but will lead to long-term environmental damage. Impact: + Money, + Pollution 
-                Are you sure?
+    Prioritizing efficiency is key. We can address the environmental impact once we've solidified our profits.
+        4: Prioritize Profit Goals. Impact: + Money, + Pollution 
         -> Yes
-            <<jump NewYarnScript5>>
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript51>>
+            -> No
+                <<jump NewYarnScript4>>
         -> No
-            <<jump NewYarnScript4>>
-
-===
-title: NewYarnScript5
-tags:
----
-Period 5
-Manager what shall we do?
-    -> We've just landed a massive contract, and the pressure is on to increase production, even if it means more pollution. (Boosts productivity, harms environmental health, lowers worker morale.) 
-        ->Choice1: Expand Production into New Markets. Expanding into new markets will boost output and profits, but significantly increase waste and pollution. Impact: + Money, + Pollution
-                    Are you sure?
-        -> Yes
-            <<jump NewYarnScript6>>
-        -> No
-            <<jump NewYarnScript5>>
-    -> We're committed to maintaining steady production. We believe that preserving the lake's ecosystem is invaluable, and no big contract is worth jeopardizing it. (No boost to productivity but helps protect the environment.)
-        ->Choice2: Focus on Existing Markets. Focusing on current markets will maintain sustainability and avoid additional pollution, though it limits growth. Impact: - Money, + Pollution
-                    Are you sure?
-        -> Yes
-            <<jump NewYarnScript6>>
-        -> No
-            <<jump NewYarnScript5>>
-
-===
-title: NewYarnScript6
-tags:
----
-Period 6
-Manager what shall we do?
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript51>>
+            -> No
+                <<jump NewYarnScript4>>
     
-    -> We have a bold plan for environmental restoration that will come at a high cost but will ensure the lake thrives. (Maximizes environmental health, costs the most money.)
-        ->Choice3: Commit Fully to Green Production. Fully committing to green production processes will drastically reduce pollution, though it will be extremely costly. Impact: - Money, - Pollution
-                    Are you sure?
+===
+
+title: NewYarnScript51
+Tags:
+---
+Period 5-1
+Manager, what shall we do?
+    We've just landed a massive contract, and the pressure is on to increase production, even if it means more pollution.
+        5: Expand Production into New contract. Impact: + Money, + Pollution
         -> Yes
-            <<jump NewYarnScript7>>
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript52>>
+            -> No
+                <<jump NewYarnScript51>>
         -> No
-            <<jump NewYarnScript6>>
-    -> If we abandon our environmental efforts, we can focus purely on profits, but at what expense to the environment? (Maximizes profits, severely harms environmental health.)
-        ->Choice4: Stick to Existing Practices. Sticking with existing practices will preserve profit margins but continue to harm the environment. Impact: + Money, + Pollution
-                Are you sure?
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript52>>
+            -> No
+                <<jump NewYarnScript51>>
+
+===
+
+title: NewYarnScript52
+Tags:
+---
+Period 5-2
+    We're committed to maintaining steady production. We believe that preserving the seaside ecosystem is invaluable, and no big contract is worth jeopardizing it.
+        5: Focusing on current markets. Avoids additional pollution. Impact: - Money, + Pollution
         -> Yes
-            <<jump NewYarnScript7>>
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript61>>
+            -> No
+                <<jump NewYarnScript52>>
         -> No
-            <<jump NewYarnScript6>>
-
-===
-title: NewYarnScript7
-tags:
----
-Endings: 
-Ending 1: Financial Success, Environmental Collapse. High money, high pollution throughout all periods. 
-Ending 2: Balanced Approach. Oderate money, moderate pollution throughout all periods. 
-Ending 3: Environmental Recovery. Low money, low pollution throughout all periods. 
-Ending 4: Environmental Crisis with Financial Strain. Low money, high pollution throughout all periods.
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript61>>
+            -> No
+                <<jump NewYarnScript52>>
 
 ===
 
-title: Party
+title: NewYarnScript61
+Tags:
 ---
-<<declare $partyHats = 0>>
-Partygoer A: We're having a party!
-Partygoer B: Yeah, we are!
-Partygoer A: Want a party hat?
-    -> Yes, please!
-        <<set $partyHats = $partyHats + 1>>
-        Partygoer A: Here you go!
-        Partygoer B: Look over here!
-            <<jump OverHere>>
-    -> No, thanks. I despise happiness. I relish misery.
-        Partygoer A: We see that.
-        Partygoer B: Why don't you go over there?
-            <<jump OverThere>>
-    -> I'd rather go over here...
-        <<jump OverThere>>
+Period 61
+Manager, what shall we do?
+    
+    We have a bold plan for environmental restoration that will come at a high cost but will ensure the seaside will thrive.
+        6: Commit Fully to Green Production, though it will be extremely costly. Impact: - Money, - Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript62>>
+            -> No
+                <<jump NewYarnScript61>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript62>>
+            -> No
+                <<jump NewYarnScript61>>
+
 ===
 
-title: OverHere
+title: NewYarnScript62
+Tags:
 ---
-Partygoer C: Oh hi. Can I borrow a party hat? 
-Partygoer C: I lost mine.
-<<if $partyHats > 0>>
-    Partygoer C: Looks like you can spare a hat.
-        -> Sure, here you go.
-            <<set $partyHats = $partyHats - 1>>
-            <<jump OverThere>>
-        -> No. Never. Absolutely not.
-            <<jump OverThere>>
-<<else>>
-    Partygoer C: Oh, you don't have any to spare.
-    Partygoer C: Cya around, I guess.
-    <<jump Party>>
-<<endif>>
-===
+    If we abandon our environmental efforts, we can focus purely on profits, but at what expense to the environment?
+        6: Change the Existing Practices. Impact: + Money, + Pollution
+        -> Yes
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript71>>
+            -> No
+                <<jump NewYarnScript62>>
+        -> No
+            Are you sure?
+            -> Yes
+                <<jump NewYarnScript72>>
+            -> No
+                <<jump NewYarnScript62>>
 
-title: OverThere
+===
+title: NewYarnScript71
+Tags:
 ---
-Partygoer D: Hi!
-<<if $partyHats > 0 and $partyHats <= 2>>
-    Partygoer D: You're definitely fun.
-        -> Why?
-            Partygoer D: You like party hats.
-                -> Thanks! You're fun too.
-                    <<jump Party>>
-<<elseif $partyHats > 2>>
-    Partygoer D: You have too many hats!
-    Partygoer D: It really scares me.
-        -> Sorry...
-            <<jump Party>>
-<<else>>
-    Partygoer D: You should go party somewhere else in this party.
-        -> Oh, bye, then...
-            <<jump Party>>
-<<endif>>
+Ending:
+
+Ending 1: Financial Success, Environmental Collapse. High money, high pollution throughout all periods.  
+
+    <<jump NewYarnScript>>
+    
+===
+title: NewYarnScript72
+Tags:
+---
+Ending:
+
+Ending 2: Environmental Recovery. Low money, low pollution throughout all periods. 
+
+    <<jump NewYarnScript>>
 ===
