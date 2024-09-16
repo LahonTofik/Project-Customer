@@ -1,0 +1,157 @@
+﻿title: NewYarnScript
+tags:
+---
+Period 1
+Manager what shall we do?
+    -> We've got to boost our production capacity to stay ahead. If we don't expand now, we'll lose market share. (This option increases factory productivity but decreases environmental health.) 
+        Choice1: Expand Production Capacity. We need to boost production capacity to stay ahead. It’ll be expensive and increase pollution, but it’s essential for growth. Impact: + Money, + Pollution
+        Are you sure?
+        -> Yes
+            <<jump NewYarnScript2>>
+        -> No
+            <<jump NewYarnScript>>
+    -> What if we shift our focus to becoming more efficient rather than just growing? That way, we won't sacrifice the environment for short-term gains. (This leads to a moderate increase in productivity with no harm to the environment.) 
+        Choice2: Focus on Efficient Production. Let’s focus on improving efficiency rather than expanding. This way, we can increase productivity without harming the environment. Impact: - Money, + Pollution
+            Are you sure?
+        -> Yes
+            <<jump NewYarnScript2>>
+        -> No
+            <<jump NewYarnScript>>
+    -> I propose we invest in new machinery to cut down on waste. It'll be a hefty upfront cost, but I believe it's worth it for the long-term impact. (This will increase efficiency, reduce pollution slightly, and involve initial costs.)  
+        Choice3: Invest in Eco-Friendly Technology. Investing in eco-friendly technology will reduce pollution and improve sustainability, though it will be costly. Impact: - Money, - Pollution
+            Are you sure?
+        -> Yes
+            <<jump NewYarnScript2>>
+        -> No
+            <<jump NewYarnScript>>
+    -> Currently, cutting back on maintenance seems like the best way to save resources. We can always address environmental issues later. (This would increase financial standing but decrease factory productivity.)
+        ->Choice4: Ignore Environmental Upgrades. Let’s hold off on environmental upgrades for now to save costs. We can address these issues later. Impact: + Money, + Pollution
+        Are you sure?
+        -> Yes
+            <<jump NewYarnScript2>>
+        -> No
+            <<jump NewYarnScript>>
+===
+title: NewYarnScript2
+tags:
+---
+Period 2
+Manager what shall we do?
+    -> We need to install new machines to boost our production. We’ll hit our targets, but it’ll be costly and polluting. (It boosts productivity, but increases pollution and costs a lot.)  
+        -> Choice1: Install New Machines. Installing new machines will boost production but will increase pollution and cost significantly. Impact: + Money, + Pollution 
+    -> Maybe it’s smarter to maintain our current output without making substantial changes. At least this way, we won’t hurt the environment. (No, there is no change in productivity, but it doesn’t harm the environment.) 
+        -> Choice2: Maintain Current Output. Maintaining our current output will keep pollution levels stable but won’t help us achieve higher profits. Impact: - Money, + Pollution
+    -> If we reduce pollution now by upgrading waste management, it’ll help the lake, but it’ll drain our budget. (Reduces pollution, costs money.)  
+        -> Choice3: Invest in Waste Management Systems. Upgrading waste management systems will reduce pollution but require a significant financial investment. Impact: - Money, - Pollution
+    -> We can wait for the environmental upgrades until we’re more profitable. The lake can hold on a little longer, right? (Saves money, increases pollution.)
+        -> Choice4: Delay Environmental Efforts. Delaying environmental efforts will save money in the short term but increase pollution over time. Impact: + Money, + Pollution 
+
+Period 3: Choices
+Manager what shall we do?
+    -> Markets booming! We must boost production, but should we risk increasing pollution? (Boosts productivity but damages the environment and morale)  
+        ->Choice1: Accelerate Production. Accelerating production will meet market demands but significantly increase pollution. Impact: + Money, + Pollution
+    -> Let’s tread carefully. Pushing too hard could harm both the factory and the environment eventually. (There is no change to productivity, but it keeps environmental impact low.) 
+        ->Choice2: Keep Production Stable. Keeping production stable helps avoid additional strain on resources and pollution, though we won’t see an increase in profits. Impact: - Money, + Pollution
+    -> It’s time to invest in upgraded water filtration systems. If we don’t act now, the lake and our public image will suffer. (It noticeably reduces pollution but comes at a cost)
+        ->Choice3: Upgrade Water Filtration Systems. Upgrading filtration systems will significantly reduce pollution but will come at a high cost. Impact: - Money, - Pollution
+    -> I think we should hold off on the filtration upgrades. Finances are tight, and the lake’s condition hasn't worsened yet. (It saves money increases pollution and harms the Siren’s habitat.)
+        ->Choice4: Postpone Filtration Upgrades. Postponing filtration upgrades saves money now but continues to allow pollution to build up. Impact: + Money, + Pollution 
+
+Period 4: Choices
+Manager what shall we do?
+    -> We're looking to expand our workforce to ramp up production and keep up with the increasing demand. Although it will be a significant investment, it's crucial for our growth. (This move will result in improved productivity but will put a strain on our financial resources.)
+        ->Choice1: Hire More Workers. Hiring more workers will increase production capacity but will also lead to more waste and higher costs. Impact: + Money, + Pollution
+    -> It's time to focus on stabilizing our production. Right now, the cost of hiring more workers outweighs the benefits. (This decision won't have a direct impact on our finances or production.)
+        ->Choice2: Improve Productivity with the Current Workforce. Improving productivity with our current workforce will help manage environmental impact without additional costs. Impact: - Money, + Pollution
+    -> Let's take the initiative to invest in reforestation efforts around the lake. It's a costly endeavour, but we cannot ignore the ecological damage we've caused. (This investment will significantly boost environmental health but will come at a high cost.)
+        ->Choice3: Commit to Long-Term Sustainability Goals. Focusing on long-term sustainability will protect the environment but will impact our short-term profits. Impact: - Money, - Pollution
+    -> Prioritizing efficiency is key. We can address the environmental impact once we've solidified our profits. (This approach will save on costs, but may negatively affect environmental health.) 
+        ->Choice4: Prioritize Profit Goals. Prioritizing profit over sustainability might boost short-term earnings but will lead to long-term environmental damage. Impact: + Money, + Pollution 
+
+Period 5: Choices
+Manager what shall we do?
+    -> We've just landed a massive contract, and the pressure is on to increase production, even if it means more pollution. (Boosts productivity, harms environmental health, lowers worker morale.) 
+        ->Choice1: Expand Production into New Markets. Expanding into new markets will boost output and profits, but significantly increase waste and pollution. Impact: + Money, + Pollution
+    -> We're committed to maintaining steady production. We believe that preserving the lake's ecosystem is invaluable, and no big contract is worth jeopardizing it. (No boost to productivity but helps protect the environment.)
+        ->Choice2: Focus on Existing Markets. Focusing on current markets will maintain sustainability and avoid additional pollution, though it limits growth. Impact: - Money, + Pollution
+    -> An extensive environmental cleanup campaign is overdue. While it will be a significant investment, we cannot continue to compromise the health of the lake. (Improves environmental health significantly, reduces financial resources.)
+        ->Choice3: Invest in Renewable Energy Sources. Investing in renewable energy will greatly reduce pollution but is a major financial commitment. Impact: - Money, - Pollution
+    -> While prioritizing profits, we also understand the importance of environmental initiatives. However, we believe the focus should be on securing our financial stability first. (Boosts financial standing, harms the environment.)
+        ->Choice4: Delay Renewable Energy Switch. Text Bubble: Delaying the switch to renewable energy will save money now but perpetuate pollution. Impact: + Money, + Pollution 
+
+Period 6: Choices
+Manager what shall we do?
+    -> Full steam ahead! Ramping up production will secure our future, but at what cost to the lake? (Boosts productivity immensely, but severely harms the environment and public perception.)
+        ->Choice1: Ramp Up Production for Large Contract. Ramping up production to meet a large contract will generate significant revenue but result in severe pollution. Impact: + Money, + Pollution
+    -> Let's play it safe and stick with moderate production. We cannot risk harming the lake for higher targets. (Moderate productivity helps protect the environment.) 
+        ->Choice2: Turn Down the Contract. Turning down the contract to maintain sustainable production will protect the lake but cost us a major financial opportunity. Impact: - Money, + Pollution
+    -> We have a bold plan for environmental restoration that will come at a high cost but will ensure the lake thrives. (Maximizes environmental health, costs the most money.)
+        ->Choice3: Commit Fully to Green Production. Fully committing to green production processes will drastically reduce pollution, though it will be extremely costly. Impact: - Money, - Pollution
+    -> If we abandon our environmental efforts, we can focus purely on profits, but at what expense to the environment? (Maximizes profits, severely harms environmental health.)
+        ->Choice4: Stick to Existing Practices. Sticking with existing practices will preserve profit margins but continue to harm the environment. Impact: + Money, + Pollution
+
+Endings: 
+Ending 1: Financial Success, Environmental Collapse. High money, high pollution throughout all periods. 
+Ending 2: Balanced Approach. Oderate money, moderate pollution throughout all periods. 
+Ending 3: Environmental Recovery. Low money, low pollution throughout all periods. 
+Ending 4: Environmental Crisis with Financial Strain. Low money, high pollution throughout all periods.
+
+===
+
+title: Party
+---
+<<declare $partyHats = 0>>
+Partygoer A: We're having a party!
+Partygoer B: Yeah, we are!
+Partygoer A: Want a party hat?
+    -> Yes, please!
+        <<set $partyHats = $partyHats + 1>>
+        Partygoer A: Here you go!
+        Partygoer B: Look over here!
+            <<jump OverHere>>
+    -> No, thanks. I despise happiness. I relish misery.
+        Partygoer A: We see that.
+        Partygoer B: Why don't you go over there?
+            <<jump OverThere>>
+    -> I'd rather go over here...
+        <<jump OverThere>>
+===
+
+title: OverHere
+---
+Partygoer C: Oh hi. Can I borrow a party hat? 
+Partygoer C: I lost mine.
+<<if $partyHats > 0>>
+    Partygoer C: Looks like you can spare a hat.
+        -> Sure, here you go.
+            <<set $partyHats = $partyHats - 1>>
+            <<jump OverThere>>
+        -> No. Never. Absolutely not.
+            <<jump OverThere>>
+<<else>>
+    Partygoer C: Oh, you don't have any to spare.
+    Partygoer C: Cya around, I guess.
+    <<jump Party>>
+<<endif>>
+===
+
+title: OverThere
+---
+Partygoer D: Hi!
+<<if $partyHats > 0 and $partyHats <= 2>>
+    Partygoer D: You're definitely fun.
+        -> Why?
+            Partygoer D: You like party hats.
+                -> Thanks! You're fun too.
+                    <<jump Party>>
+<<elseif $partyHats > 2>>
+    Partygoer D: You have too many hats!
+    Partygoer D: It really scares me.
+        -> Sorry...
+            <<jump Party>>
+<<else>>
+    Partygoer D: You should go party somewhere else in this party.
+        -> Oh, bye, then...
+            <<jump Party>>
+<<endif>>
+===
