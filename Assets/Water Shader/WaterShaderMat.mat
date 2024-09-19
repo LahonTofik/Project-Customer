@@ -35,20 +35,27 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _Base_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _FlowSpeed: 0.3
-    - _FoamDensity: 4
-    - _FoamSpeed: 0.3
+    - _FlowSpeed: 0.2
+    - _FoamDensity: 16
+    - _FoamSpeed: 0.2
     - _FoamThickness: 3
-    - _MaxHeight: 0.224
+    - _MaxHeight: 0.225
     - _WaveHeight: 0.05
+    - _WaveSpeed: 0
     - _WaveSpread: 5
+    - _WaveStrength: 0
     m_Colors:
-    - _FlowDirection: {r: 0.1, g: 0.4, b: 0, a: 0}
-    - _FoamColor: {r: 0.56037736, g: 0.9213921, b: 1, a: 0}
-    - _WaterColor: {r: 0, g: 0.34823072, b: 0.6784314, a: 0}
+    - _Base_Color: {r: 0.7529412, g: 0.1282023, b: 0.08235294, a: 1}
+    - _FlowDirection: {r: -0.4, g: 0.1, b: 0, a: 0}
+    - _FoamColor: {r: 0.75, g: 0.75, b: 0.5, a: 1}
+    - _WaterColor: {r: 0, g: 0.4, b: 0.5, a: 1}
   m_BuildTextureStacks: []
