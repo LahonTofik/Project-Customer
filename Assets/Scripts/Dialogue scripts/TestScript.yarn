@@ -1,13 +1,14 @@
 ﻿title: NewYarnScript
 Tags: Period 1
 ---
+<<declare $adjust_pollution = 0 as number>>
 Manager, what shall we do?
     We've got to boost our production capacity to stay ahead. If we don't expand now, we'll lose market share.
         1: Expand Production Capacity. Impact: + Money, + Pollution
         -> Yes
             Are you sure?
             -> Yes
-                //<<adjust_pollution 10>>  // Increase pollution by 10
+                <<set $adjust_pollution = $adjust_pollution + 10>>  // Increase pollution by 10
                 <<jump NewYarnScript2>>
             -> No
                 <<jump NewYarnScript>>
@@ -29,7 +30,7 @@ Manager, what shall we do?
         -> Yes
             Are you sure?
             -> Yes
-                //<<adjust_pollution 5>>  // Slight increase in pollution
+                <<set $adjust_pollution = $adjust_pollution + 5>>  // Slight increase in pollution
                 <<jump NewYarnScript3>>
             -> No
                 <<jump NewYarnScript2>>
@@ -51,7 +52,7 @@ Manager, what shall we do?
         -> Yes
             Are you sure?
             -> Yes
-                //<<adjust_pollution -20>>  // Decrease pollution significantly
+                <<set $adjust_pollution = $adjust_pollution - 20>>  // Decrease pollution significantly
                 <<jump NewYarnScript4>>
             -> No
                 <<jump NewYarnScript3>>
@@ -73,7 +74,7 @@ Manager, what shall we do?
         -> Yes
             Are you sure?
             -> Yes
-                //<<adjust_pollution 15>>  // Increase pollution by 15
+                <<set $adjust_pollution = $adjust_pollution + 15>>  // Increase pollution by 15
                 <<jump NewYarnScript51>>
             -> No
                 <<jump NewYarnScript4>>
@@ -95,7 +96,7 @@ Manager, what shall we do?
         -> Yes
             Are you sure?
             -> Yes
-               // <<adjust_pollution 20>>  // Large pollution increase
+                <<set $adjust_pollution = $adjust_pollution + 20>>  // Large pollution increase
                 <<jump NewYarnScript52>>
             -> No
                 <<jump NewYarnScript51>>
@@ -116,7 +117,7 @@ We're committed to maintaining steady production. We believe that preserving the
         -> Yes
             Are you sure?
             -> Yes
-               // <<adjust_pollution 5>>  // Small pollution increase
+                <<set $adjust_pollution = $adjust_pollution + 5>>  // Small pollution increase
                 <<jump NewYarnScript61>>
             -> No
                 <<jump NewYarnScript52>>
@@ -139,7 +140,7 @@ Manager, what shall we do?
         -> Yes
             Are you sure?
             -> Yes
-               // <<adjust_pollution -30>>  // Major decrease in pollution
+                <<set $adjust_pollution = $adjust_pollution - 30>>  // Major decrease in pollution
                 <<jump NewYarnScript62>>
             -> No
                 <<jump NewYarnScript61>>
@@ -160,16 +161,20 @@ If we abandon our environmental efforts, we can focus purely on profits, but at 
         -> Yes
             Are you sure?
             -> Yes
-                // <<adjust_pollution 20>>  // Increase pollution
-                <<jump NewYarnScript7>>
+                <<set $adjust_pollution = $adjust_pollution + 20>>  // Increase pollution
             -> No
                 <<jump NewYarnScript62>>
         -> No
             Are you sure?
             -> Yes
-                <<jump NewYarnScript8>>
             -> No
                 <<jump PNewYarnScript62>>
+
+<<if $adjust_pollution > 45>>
+<<jump NewYarnScript7>>
+<<else>>
+<<jump NewYarnScript8>>
+<<endif>>
 
 ===
 
@@ -178,8 +183,8 @@ Tags: Period ending1
 ---
 Ending 1: Financial Success, Environmental Collapse. High money, high pollution throughout all periods.
 
-    //<<adjust_pollution 50>>  // Set pollution to max for this ending
-    <<jump NewYarnScript>>
+    //<<adjust_pollution = 50>>  // Set pollution to max for this ending
+    //<<jump NewYarnScript>>
 
 ===
 
@@ -188,6 +193,6 @@ Tags: Period ending2
 ---
 Ending 2: Environmental Recovery. Low money, low pollution throughout all periods.
 
-   // <<adjust_pollution -50>>  // Set pollution to minimum for this ending
-    <<jump NewYarnScript>>
+    //<<adjust_pollution = -50>>  // Set pollution to minimum for this ending
+    //<<jump NewYarnScript>>
 ===

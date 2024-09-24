@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public GameObject settingsMenu;
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject settingsMenu;
 
     private bool isPaused;
 
@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("brozo");
+            //Debug.Log("brozo");
             if (isPaused)
             {
                 if (pauseMenu.activeSelf)
@@ -61,7 +61,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenuWithAsset");
     }
 
     public void QuitGame()
