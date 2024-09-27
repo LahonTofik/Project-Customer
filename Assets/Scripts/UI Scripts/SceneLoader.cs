@@ -7,7 +7,17 @@ public class SceneLoader : MonoBehaviour
 {
     public void PlayGame()
     {
+        SceneManager.LoadScene("OpeningCinematic");
+    }
+
+    public void Replay()
+    {
         SceneManager.LoadScene("LevelOne");
+    }
+
+    public void Back2MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu(Finished");
     }
 
     public void QuitGame()

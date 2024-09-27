@@ -6,12 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 344dab7e02e6ccf4b9ace98c5795dabb
+    path: Assets/Scenes/MainMenu(Finished.unity
+    guid: e1bd4f8a89bc02c42895b02182a47fe7
+  - enabled: 1
+    path: Assets/Scenes/OpeningCinematic.unity
+    guid: ee4e2a312db02a14c8d0de7592678b53
   - enabled: 1
     path: Assets/Scenes/LevelOne.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/MainMenuWithAsset.unity
-    guid: ca3b62e93d79d354c80705077056c023
+    path: Assets/Scenes/DesktopScreen.unity
+    guid: 1489fd28a13956948a150f4bae226001
+  - enabled: 1
+    path: Assets/Scenes/SimonSaysMini.unity
+    guid: 93c7410e6eef95a448ebfdb232481843
+  - enabled: 1
+    path: Assets/Scenes/EndingCinematics.unity
+    guid: bc7f0116a9fb41c45aef0165467d0e97
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: eb18a6d5fc2151a4882760e86505c233
   m_configObjects: {}
