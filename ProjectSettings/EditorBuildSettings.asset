@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelOne.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/DesktopScreen.unity
-    guid: 1489fd28a13956948a150f4bae226001
-  - enabled: 1
     path: Assets/Scenes/SimonSaysMini.unity
     guid: 93c7410e6eef95a448ebfdb232481843
   - enabled: 1
