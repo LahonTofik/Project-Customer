@@ -7,16 +7,27 @@ using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum ButtonColors
 {
     Red,
-    Green,
+    Yellow,
     Blue
 }
 
 public class SimonSaysSystem : MonoBehaviour
 {
+    [SerializeField] GameObject redCircle;
+    [SerializeField] GameObject yellowCircle;
+    [SerializeField] GameObject blueCircle;
+
+    [SerializeField] Color redOnColor;
+    public Color redOffColor;
+    [SerializeField] Color yellowOnColor;
+    public Color yellowOffColor;
+    [SerializeField] Color blueOnColor;
+    public Color blueOffColor;
 
     List<ButtonColors> simonColors;
     List<ButtonColors> playerColors;
@@ -102,6 +113,12 @@ public class SimonSaysSystem : MonoBehaviour
             lives--;
             playerColors.Clear();
             Debug.Log("Player has failed");
+            
+            livesDisplay.text = "lives: " + lives;
+            if (lives <= 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 
@@ -118,8 +135,36 @@ public class SimonSaysSystem : MonoBehaviour
         for (int i = 0; i < simonColors.Count; i++)
         {
             UpdateUIText(simonColors[i]);
+            ChangeColors(simonColors[i]);
             colorCount++;
             yield return new WaitForSeconds(delay);
+        }
+    }
+
+    void ChangeColors(ButtonColors buttonColors)
+    {
+        Image colorRedCircle = redCircle.GetComponent<Image>();
+        Image colorYellowCircle = yellowCircle.GetComponent<Image>();
+        Image colorBlueCircle = blueCircle.GetComponent<Image>();
+
+        colorRedCircle.color = redOffColor;
+        colorYellowCircle.color = yellowOffColor;
+        colorBlueCircle.color = blueOffColor;
+
+        switch(buttonColors)
+        {
+            case ButtonColors.Red:
+                Console.WriteLine("this is red now");
+                colorRedCircle.color = redOnColor;
+                break;
+            case ButtonColors.Yellow:
+                colorYellowCircle.color = yellowOnColor;
+                Console.WriteLine("this is yellow now");
+                break;
+            case ButtonColors.Blue:
+                colorBlueCircle.color = blueOnColor;
+                Console.WriteLine("this is blue now");
+                break;
         }
     }
 
@@ -128,15 +173,5 @@ public class SimonSaysSystem : MonoBehaviour
         // Init
         simonColors = new();
         playerColors = new();
-    }
-
-    private void Update()
-    {
-        //Debug.Log(lives);
-        livesDisplay.text = "lives: " + lives;
-        if (lives <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
     }
 }
