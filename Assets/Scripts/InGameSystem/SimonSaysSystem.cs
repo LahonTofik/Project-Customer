@@ -1,11 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditorInternal;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -37,12 +33,27 @@ public class SimonSaysSystem : MonoBehaviour
     int colorCount = 1;
     int lives = 3;
 
-
     public TMP_Text simonDisplayText;
     public TMP_Text roundDisplay;
     public TMP_Text livesDisplay;
 
+    // Add this for the lose sound
+    public AudioClip loseSound; // Reference to the lose sound clip
+    public AudioClip winSound; // Reference to the win sound clip
+    private AudioSource audioSource; // Reference to the AudioSource
 
+    void Start()
+    {
+        // Init
+        simonColors = new List<ButtonColors>();
+        playerColors = new List<ButtonColors>();
+
+        // Get the AudioSource component to play sounds
+        audioSource = GetComponent<AudioSource>();
+
+        // Start the game
+        StartORRetry();
+    }
 
     void FillSimonColors(int colorAmount)
     {
@@ -89,6 +100,13 @@ public class SimonSaysSystem : MonoBehaviour
         {
             // Player got it correct
             winCounter++;
+
+            // Play the win sound
+            if (audioSource != null && winSound != null)
+            {
+                audioSource.PlayOneShot(winSound);
+            }
+
             if (winCounter >= WINS_NEEDED)
             {
                 // Player won, do something...
@@ -110,7 +128,14 @@ public class SimonSaysSystem : MonoBehaviour
         {
             // Incorrect player input, punish...
             StopAllCoroutines();
-            lives--;
+            lives--; // Decrease lives
+
+            // Play the lose sound
+            if (audioSource != null && loseSound != null)
+            {
+                audioSource.PlayOneShot(loseSound);
+            }
+
             playerColors.Clear();
             Debug.Log("Player has failed");
             
@@ -126,7 +151,6 @@ public class SimonSaysSystem : MonoBehaviour
     {
         colorCount = 1;
         FillSimonColors(5);
-
         StartCoroutine(ShowColors(2));
     }
 
