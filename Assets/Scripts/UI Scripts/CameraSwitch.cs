@@ -12,6 +12,7 @@ public class CameraSwitch : MonoBehaviour
     [SerializeField] GameObject screenViewPos;
     [SerializeField] GameObject closeUpBoard;
 
+    [SerializeField] GameObject notYetPromt;
 
     float lerpTime = 0f;
 
@@ -22,6 +23,8 @@ public class CameraSwitch : MonoBehaviour
     bool camSwitchBoard = false;
     bool zoomedInBoard = false;
     bool isOnBoard = false;
+
+    bool codeSeen = false;
 
     private void Update()
     {
@@ -45,16 +48,15 @@ public class CameraSwitch : MonoBehaviour
                 gameObject.transform.position = Vector3.Lerp(closeUpBoard.transform.position, playerViewPos.transform.position, lerpTime); // position
             }
         }
-        if (Input.GetKeyDown(KeyCode.E) && isOnBoard == false) // computer zoom-in
+        if (Input.GetKeyDown(KeyCode.E) && isOnBoard == false && codeSeen == true) // computer zoom-in
         {
             lerpTime = 0f;
             camSwitch = true;
             isOnScreen = !isOnScreen;
-            if (cameraZoomedIn)
-            {
-                gameObject.transform.position = computerZoomPos.transform.position; // position
-                gameObject.transform.rotation = computerZoomPos.transform.rotation; // rotation
-            }
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && codeSeen == false)
+        {
+            notYetPromt.SetActive(true);
         }
         if (camSwitch)
         {
@@ -72,16 +74,7 @@ public class CameraSwitch : MonoBehaviour
         }
         if (lerpTime > 1f && camSwitch)
         {
-            SceneManager.LoadScene("SimonSaysMini");
-            cameraZoomedIn = !cameraZoomedIn;
-            camSwitch = false;
-            lerpTime = 0f;
-            if (cameraZoomedIn)
-            {
-                gameObject.transform.rotation = screenViewPos.transform.rotation; // rotation
-                gameObject.transform.position = screenViewPos.transform.position; // position
-            }
-
+            SceneManager.LoadScene("Computer screen");
         }
         if (lerpTime > 1f && camSwitchBoard)
         {
@@ -89,6 +82,11 @@ public class CameraSwitch : MonoBehaviour
             camSwitchBoard = false;
             lerpTime = 0f;
         }
+    }
+
+    public void CodeIsSeen()
+    {
+        codeSeen = true;
     }
 
 }

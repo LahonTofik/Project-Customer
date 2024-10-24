@@ -10,6 +10,15 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("OpeningCinematic");
     }
 
+    public void OpenSimonSays()
+    {
+        SceneManager.LoadScene("SimonSaysMini");
+    }
+
+    public void OpenFinalCinematic()
+    {
+        SceneManager.LoadScene("EndingCinematics");
+    }
     public void Replay()
     {
         SceneManager.LoadScene("LevelOne");

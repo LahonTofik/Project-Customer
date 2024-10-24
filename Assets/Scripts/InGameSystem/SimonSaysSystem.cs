@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public enum ButtonColors
 {
@@ -14,6 +15,8 @@ public enum ButtonColors
 
 public class SimonSaysSystem : MonoBehaviour
 {
+    [SerializeField] GameObject winPrompt;
+
     [SerializeField] GameObject redCircle;
     [SerializeField] GameObject yellowCircle;
     [SerializeField] GameObject blueCircle;
@@ -29,7 +32,7 @@ public class SimonSaysSystem : MonoBehaviour
     List<ButtonColors> playerColors;
 
     int winCounter;
-    int WINS_NEEDED = 2;
+    int WINS_NEEDED = 3;
     int colorCount = 1;
     int lives = 3;
 
@@ -37,23 +40,12 @@ public class SimonSaysSystem : MonoBehaviour
     public TMP_Text roundDisplay;
     public TMP_Text livesDisplay;
 
+    public TMP_Text finalNumbers;
+
     // Add this for the lose sound
     public AudioClip loseSound; // Reference to the lose sound clip
     public AudioClip winSound; // Reference to the win sound clip
     private AudioSource audioSource; // Reference to the AudioSource
-
-    void Start()
-    {
-        // Init
-        simonColors = new List<ButtonColors>();
-        playerColors = new List<ButtonColors>();
-
-        // Get the AudioSource component to play sounds
-        audioSource = GetComponent<AudioSource>();
-
-        // Start the game
-        StartORRetry();
-    }
 
     void FillSimonColors(int colorAmount)
     {
@@ -70,7 +62,7 @@ public class SimonSaysSystem : MonoBehaviour
     void UpdateUIText(ButtonColors color)
     {
         Debug.Log(colorCount + ": Simon: " + color.ToString());
-        simonDisplayText.text = colorCount + ": Simon says: " + color.ToString();
+        simonDisplayText.text = colorCount + ": Simon tells: " + color.ToString();
     }
 
     bool CompareLists()
@@ -110,8 +102,9 @@ public class SimonSaysSystem : MonoBehaviour
             if (winCounter >= WINS_NEEDED)
             {
                 // Player won, do something...
+                winPrompt.SetActive(true);
+                finalNumbers.text = "Final numbers are: 27";
                 Debug.Log("Player has finished the game");
-                SceneManager.LoadScene("EndingCinematics");
             }
             else
             {
@@ -139,7 +132,7 @@ public class SimonSaysSystem : MonoBehaviour
             playerColors.Clear();
             Debug.Log("Player has failed");
             
-            livesDisplay.text = "lives: " + lives;
+            livesDisplay.text = "Tries: " + lives;
             if (lives <= 0)
             {
                 SceneManager.LoadScene("GameOver");
@@ -149,6 +142,7 @@ public class SimonSaysSystem : MonoBehaviour
 
     public void StartORRetry()
     {
+        StopAllCoroutines();
         colorCount = 1;
         FillSimonColors(5);
         StartCoroutine(ShowColors(2));
@@ -192,8 +186,15 @@ public class SimonSaysSystem : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
+        // Init
+        simonColors = new List<ButtonColors>();
+        playerColors = new List<ButtonColors>();
+
+        // Get the AudioSource component to play sounds
+        audioSource = GetComponent<AudioSource>();
+
         // Init
         simonColors = new();
         playerColors = new();
